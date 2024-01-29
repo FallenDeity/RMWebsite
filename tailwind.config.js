@@ -4,6 +4,10 @@ module.exports = {
 	darkMode: ["class"],
 	content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
 	theme: {
+		screens: {
+			xs: "380px",
+			...require("tailwindcss/defaultTheme").screens,
+		},
 		container: {
 			center: true,
 			padding: "2rem",
@@ -12,6 +16,9 @@ module.exports = {
 			},
 		},
 		extend: {
+			backgroundImage: {
+				gradient: "var(--gradient)",
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
@@ -68,5 +75,11 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate"), require("prettier-plugin-tailwindcss")],
+	plugins: [
+		require("tailwindcss-animate"),
+		require("prettier-plugin-tailwindcss"),
+		require("tailwind-scrollbar"),
+		require("tailwind-scrollbar-hide"),
+		require("@tailwindcss/typography"),
+	],
 };
