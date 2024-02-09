@@ -9,8 +9,13 @@ const imageBuilder = createImageUrlBuilder({
 });
 
 export const urlForImage = (source: Image): string => {
-	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-	return imageBuilder?.image(source).auto("format").fit("max").url();
+	try {
+		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+		return imageBuilder?.image(source).auto("format").fit("max").url();
+	} catch (error) {
+		console.error(error);
+		return "";
+	}
 };
 
 export const urlFor = (source: Image): ImageUrlBuilder => {

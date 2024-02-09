@@ -23,7 +23,7 @@ export default function GalleryImage({ item }: { item: GalleryItem }): React.JSX
 				width={10}
 				height={10}
 				className={`block w-full rounded-md object-cover ${
-					loading ? "animate-pulse bg-secondary blur-md" : ""
+					loading ? "animate-pulse bg-secondary blur-sm" : ""
 				}`}
 				onLoadingComplete={(): void => setLoading(false)}
 			/>

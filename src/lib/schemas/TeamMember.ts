@@ -38,7 +38,7 @@ export default {
 		{
 			name: "mail",
 			title: "Mail",
-			type: "url",
+			type: "string",
 		},
 		{
 			name: "subsystem",
@@ -61,10 +61,10 @@ export default {
 			type: "string",
 			options: {
 				list: [
-					{ title: "Member", value: "member" },
-					{ title: "Subsystem Head", value: "subsystemHead" },
-					{ title: "Project Manager", value: "projectManager" },
-					{ title: "Team Leader", value: "teamLeader" },
+					{ title: "Member", value: "Member" },
+					{ title: "Subsystem Head", value: "subsystem Head" },
+					{ title: "Team Manager", value: "Team Manager" },
+					{ title: "Team Leader", value: "Team Leader" },
 				],
 			},
 		},
