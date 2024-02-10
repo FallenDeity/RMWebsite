@@ -32,3 +32,15 @@ export interface TeamMember {
 	readonly _createdAt: Date;
 	readonly _updatedAt: Date;
 }
+
+export interface Experience {
+	readonly _id: string;
+	readonly title: string;
+	readonly date: string;
+	readonly competition: string;
+	icon: string | Image;
+	readonly iconBg: string;
+	readonly points: string[];
+	readonly _createdAt: Date;
+	readonly _updatedAt: Date;
+}

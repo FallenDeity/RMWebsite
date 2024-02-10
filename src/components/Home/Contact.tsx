@@ -31,7 +31,7 @@ export function Contact(): React.JSX.Element {
 				whileInView="show"
 				viewport={{ once: true }}>
 				<div className="flex h-full w-full flex-row items-center justify-center gap-5 rounded-md bg-secondary/70 px-2 py-4 dark:bg-secondary/30 sm:p-6 xl:justify-between">
-					<Card>
+					<Card className="border-none">
 						<CardContent className="p-4 sm:p-6">
 							<div className="space-y-8">
 								<div className="space-y-4">
