@@ -36,7 +36,11 @@ export default function TeamCard({ member }: { member: TeamMember }): React.Reac
 				</CardHeader>
 				<CardContent className="flex flex-col items-center justify-center pt-0">
 					<CardTitle className="w-56 truncate text-center text-xl">{captializeName(member.name)}</CardTitle>
-					<CardDescription>{member.role}</CardDescription>
+					<CardDescription>
+						{member.role.toLowerCase().includes("head")
+							? `${captializeName(member.subsystem)} Head`
+							: member.role}
+					</CardDescription>
 				</CardContent>
 				<CardFooter className="flex h-full w-full flex-col items-center justify-evenly pb-4">
 					<Separator className="mb-4" />

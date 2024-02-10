@@ -14,7 +14,6 @@ export function TeamData(): React.ReactElement {
 	const [minDate, maxDate] = useMemo<[Date | undefined, Date | undefined]>(() => {
 		if (Object.keys(members).length === 0) return [undefined, undefined];
 		const dates = Object.values(members).flatMap((year) => year.map((member) => member.year));
-		dates.push(new Date());
 		const minDate = dates.reduce((min, date) => (date < min ? date : min), dates[0]);
 		const maxDate = dates.reduce((max, date) => (date > max ? date : max), dates[0]);
 		return [minDate, maxDate];

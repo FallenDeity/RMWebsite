@@ -69,7 +69,7 @@ const HeadDetails = ({ details }: { details: TeamMember[] }): React.JSX.Element 
 					<TeamCard member={member} />
 				))}
 			</div>
-			<div className="my-16 flex flex-wrap items-center justify-center gap-16">
+			<div className="mb-16 flex flex-wrap items-center justify-center gap-16">
 				{heads.map((member) => (
 					<TeamCard member={member} />
 				))}
