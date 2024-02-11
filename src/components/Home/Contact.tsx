@@ -1,5 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
+import { LocateIcon, MailIcon, PhoneIcon } from "lucide-react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -30,7 +32,7 @@ export function Contact(): React.JSX.Element {
 				initial="hidden"
 				whileInView="show"
 				viewport={{ once: true }}>
-				<div className="flex h-full w-full flex-row items-center justify-center gap-5 rounded-md bg-secondary/70 px-2 py-4 dark:bg-secondary/30 sm:p-6 xl:justify-between">
+				<div className="grid h-full w-full grid-cols-1 gap-5 rounded-md bg-secondary/70 px-2 py-8 dark:bg-secondary/30 sm:px-6 lg:grid-cols-2">
 					<Card className="border-none">
 						<CardContent className="p-4 sm:p-6">
 							<div className="space-y-8">
@@ -68,13 +70,33 @@ export function Contact(): React.JSX.Element {
 							</div>
 						</CardContent>
 					</Card>
-					<div className="hidden xl:block">
+					<div className="flex h-full w-full flex-col text-center">
+						<h3 className="text-2xl font-bold">Contact Information</h3>
+						<span className="text-md text-foreground/80">
+							Feel free to reach out to us for any queries or collaborations.
+						</span>
+						<div className="my-4 flex w-full flex-col items-center justify-center space-y-2 text-sm text-muted-foreground">
+							<div className="flex flex-row">
+								<MailIcon className="mr-2 h-4 w-4" />
+								<Link href="mailto:abcd@gmail.com" target="_blank" rel="noopener noreferrer">
+									abcd@gmail.com
+								</Link>
+							</div>
+							<div className="flex flex-row">
+								<PhoneIcon className="mr-2 h-4 w-4" />
+								<Link href="tel:+919876543210" target="_blank" rel="noopener noreferrer">
+									+91 9876543210
+								</Link>
+							</div>
+							<div className="flex flex-row">
+								<LocateIcon className="mr-2 h-4 w-4" />
+								<p>Team RoboManipal, MIT Manipal, Karnataka, India</p>
+							</div>
+						</div>
 						<iframe
 							title="Team RoboManipal"
-							className="rounded-md"
+							className="h-full w-full rounded-md"
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.038475674665!2d74.78948297585087!3d13.347882787003211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbca58e304c36e7%3A0xd7655313d087ee45!2sTeam%20RoboManipal!5e0!3m2!1sen!2sin!4v1705827761207!5m2!1sen!2sin"
-							width="550"
-							height="500"
 							style={{ border: 0 }}
 							allowFullScreen
 							loading="lazy"

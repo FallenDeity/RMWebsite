@@ -1,94 +1,134 @@
 "use client";
 
+import { motion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
+
+import { fadeIn, textVariant } from "@/lib/motion";
 
 import SectionWrapper from "../wrappers/SectionWrapper";
 
 export function About(): React.JSX.Element {
 	return (
-		<section className="w-full py-12 md:py-24">
-			<div className="container px-4 md:px-6">
-				<div className="grid items-center gap-6">
-					<div className="flex flex-col justify-center space-y-8 text-center">
-						<div className="space-y-2">
-							<h1 className="bg-gradient bg-clip-text text-3xl font-bold tracking-tighter text-transparent sm:text-5xl xl:text-6xl/none">
-								Discover Our Unique Features
-							</h1>
-							<p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
-								Our features are designed to enhance your productivity and streamline your workflow.
-							</p>
+		<section className="w-full py-12 lg:py-24 xl:py-32">
+			<div className="container grid gap-12 px-4 md:px-6 lg:grid-cols-2 xl:gap-24">
+				<div className="space-y-8 lg:space-y-10">
+					<motion.div className="space-y-4" variants={fadeIn("right", "spring", 0.1, 1)}>
+						<motion.h2
+							className="text-4xl font-bold tracking-tighter sm:text-5xl"
+							variants={textVariant()}
+							initial="hidden"
+							whileInView="show"
+							viewport={{ once: true }}>
+							About Us
+						</motion.h2>
+						<motion.p
+							variants={textVariant()}
+							initial="hidden"
+							whileInView="show"
+							viewport={{ once: true }}
+							className="max-w-[700px] text-gray-600 dark:text-gray-400 md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
+							Cum nihil eos autem sit et diam diam est duis duis eos sit autem consequat. Elitr sit sed
+							aliquam lobortis dolor kasd eos ipsum. Voluptua clita sit lorem dolor hendrerit in diam et
+							sanctus et et sit et. Sed voluptua et magna aliquam eirmod nonumy dolor eos clita facilisis
+							amet sit iriure ut. Amet eum esse diam ea gubergren eleifend dolor sea cum. Eirmod nonumy
+							eirmod luptatum lorem est. Et elitr sed at aliquip duis invidunt dolor eos eros hendrerit
+							diam dolor sed nostrud.
+						</motion.p>
+					</motion.div>
+				</div>
+				<div className="space-y-8 lg:order-last lg:col-start-2 lg:space-y-10">
+					<motion.div className="space-y-4" variants={fadeIn("left", "spring", 0.1, 1)}>
+						<motion.h2
+							className="text-4xl font-bold tracking-tighter sm:text-5xl"
+							variants={textVariant()}
+							initial="hidden"
+							whileInView="show"
+							viewport={{ once: true }}>
+							Our Mission
+						</motion.h2>
+						<motion.p
+							variants={textVariant()}
+							initial="hidden"
+							whileInView="show"
+							viewport={{ once: true }}
+							className="max-w-[700px] text-gray-600 dark:text-gray-400 md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
+							We strive to ignite curiosity and innovation in the minds of future roboticists, fostering a
+							passion for cutting-edge technology.
+						</motion.p>
+					</motion.div>
+
+					<motion.div className="space-y-4" variants={fadeIn("left", "spring", 0.1, 1)}>
+						<motion.h2
+							className="text-4xl font-bold tracking-tighter sm:text-5xl"
+							variants={textVariant()}
+							initial="hidden"
+							whileInView="show"
+							viewport={{ once: true }}>
+							Core Values
+						</motion.h2>
+						<div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+							{["Innovation & Creativity", "Collaboration & Teamwork", "Excellence & Perseverance"].map(
+								(value, index) => (
+									<motion.div
+										key={index}
+										className="flex items-center gap-2"
+										initial="hidden"
+										whileInView="show"
+										viewport={{ once: true }}
+										variants={fadeIn("left", "spring", index * 0.3, 1)}>
+										<CheckCircleIcon className="h-6 w-6 text-green-500" />
+										<p className="text-lg font-semibold tracking-wide">{value}</p>
+									</motion.div>
+								)
+							)}
 						</div>
-						<div className="mx-auto w-full max-w-full space-y-4 py-10">
-							<div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-								<div className="flex flex-col items-center space-y-2 rounded-lg bg-secondary/60 p-4 dark:bg-secondary/20">
-									<div className="rounded-full p-2">
-										<InboxIcon className="h-6 w-6 text-secondary-foreground opacity-75" />
-									</div>
-									<h2 className="text-xl font-bold">Smart Inbox</h2>
-									<p className="text-pretty text-sm text-muted-foreground">
-										Our Smart Inbox feature helps you manage your emails efficiently by prioritizing
-										important emails.
-									</p>
-								</div>
-								<div className="flex flex-col items-center space-y-2 rounded-lg bg-secondary/60 p-4 dark:bg-secondary/20">
-									<div className="rounded-full p-2">
-										<MergeIcon className="h-6 w-6 text-secondary-foreground opacity-75" />
-									</div>
-									<h2 className="text-xl font-bold">Seamless Integration</h2>
-									<p className="text-pretty text-sm text-muted-foreground">
-										Seamless Integration allows you to connect with your favorite apps and services
-										without leaving your inbox.
-									</p>
-								</div>
-								<div className="flex flex-col items-center space-y-2 rounded-lg bg-secondary/60 p-4 dark:bg-secondary/20">
-									<div className="rounded-full p-2">
-										<SettingsIcon className="h-6 w-6 text-secondary-foreground opacity-75" />
-									</div>
-									<h2 className="text-xl font-bold">Advanced Customization</h2>
-									<p className="text-pretty text-sm text-muted-foreground">
-										With Advanced Customization, you can personalize your email client to suit your
-										preferences and work style.
-									</p>
-								</div>
-								<div className="flex flex-col items-center space-y-2 rounded-lg bg-secondary/60 p-4 dark:bg-secondary/20">
-									<div className="rounded-full p-2">
-										<SearchIcon className="h-6 w-6 text-secondary-foreground opacity-75" />
-									</div>
-									<h2 className="text-xl font-bold">Powerful Search</h2>
-									<p className="text-pretty text-sm text-muted-foreground">
-										Our Powerful Search feature allows you to find any email, contact, or file in
-										seconds.
-									</p>
-								</div>
-								<div className="flex flex-col items-center space-y-2 rounded-lg bg-secondary/60 p-4 dark:bg-secondary/20">
-									<div className="rounded-full p-2">
-										<LockIcon className="h-6 w-6 text-secondary-foreground opacity-75" />
-									</div>
-									<h2 className="text-xl font-bold">Reliable Security</h2>
-									<p className="text-pretty text-sm text-muted-foreground">
-										With Reliable Security, your data is always safe and protected.
-									</p>
-								</div>
-								<div className="flex flex-col items-center space-y-2 rounded-lg bg-secondary/60 p-4 dark:bg-secondary/20">
-									<div className="rounded-full p-2">
-										<MergeIcon className="h-6 w-6 text-secondary-foreground opacity-75" />
-									</div>
-									<h2 className="text-xl font-bold">Easy Collaboration</h2>
-									<p className="text-pretty text-sm text-muted-foreground">
-										Easy Collaboration allows you to share and edit documents with your team in real
-										time.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					</motion.div>
 				</div>
 			</div>
+			<section className="container mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+				<motion.div
+					className="relative overflow-hidden rounded-lg"
+					variants={fadeIn("right", "spring", 0.1, 1)}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true }}>
+					<Image
+						alt="Mission Image"
+						className="h-48 w-full object-cover md:h-72"
+						height={400}
+						src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+						style={{
+							aspectRatio: "600/400",
+							objectFit: "cover",
+						}}
+						width={600}
+					/>
+				</motion.div>
+				<motion.div
+					className="relative overflow-hidden rounded-lg"
+					variants={fadeIn("left", "spring", 0.1, 1)}
+					initial="hidden"
+					whileInView="show"
+					viewport={{ once: true }}>
+					<Image
+						alt="Values Image"
+						className="h-48 w-full object-cover md:h-72"
+						height={400}
+						src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+						style={{
+							aspectRatio: "600/400",
+							objectFit: "cover",
+						}}
+						width={600}
+					/>
+				</motion.div>
+			</section>
 		</section>
 	);
 }
 
-function InboxIcon(props: React.SVGProps<SVGSVGElement>): React.ReactElement {
+function CheckCircleIcon(props: React.SVGProps<SVGSVGElement>): React.ReactElement {
 	return (
 		<svg
 			{...props}
@@ -101,85 +141,8 @@ function InboxIcon(props: React.SVGProps<SVGSVGElement>): React.ReactElement {
 			strokeWidth="2"
 			strokeLinecap="round"
 			strokeLinejoin="round">
-			<polyline points="22 12 16 12 14 15 10 15 8 12 2 12" />
-			<path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" />
-		</svg>
-	);
-}
-
-function LockIcon(props: React.SVGProps<SVGSVGElement>): React.ReactElement {
-	return (
-		<svg
-			{...props}
-			xmlns="http://www.w3.org/2000/svg"
-			width="24"
-			height="24"
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth="2"
-			strokeLinecap="round"
-			strokeLinejoin="round">
-			<rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
-			<path d="M7 11V7a5 5 0 0 1 10 0v4" />
-		</svg>
-	);
-}
-
-function MergeIcon(props: React.SVGProps<SVGSVGElement>): React.ReactElement {
-	return (
-		<svg
-			{...props}
-			xmlns="http://www.w3.org/2000/svg"
-			width="24"
-			height="24"
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth="2"
-			strokeLinecap="round"
-			strokeLinejoin="round">
-			<path d="m8 6 4-4 4 4" />
-			<path d="M12 2v10.3a4 4 0 0 1-1.172 2.872L4 22" />
-			<path d="m20 22-5-5" />
-		</svg>
-	);
-}
-
-function SearchIcon(props: React.SVGProps<SVGSVGElement>): React.ReactElement {
-	return (
-		<svg
-			{...props}
-			xmlns="http://www.w3.org/2000/svg"
-			width="24"
-			height="24"
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth="2"
-			strokeLinecap="round"
-			strokeLinejoin="round">
-			<circle cx="11" cy="11" r="8" />
-			<path d="m21 21-4.3-4.3" />
-		</svg>
-	);
-}
-
-function SettingsIcon(props: React.SVGProps<SVGSVGElement>): React.ReactElement {
-	return (
-		<svg
-			{...props}
-			xmlns="http://www.w3.org/2000/svg"
-			width="24"
-			height="24"
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth="2"
-			strokeLinecap="round"
-			strokeLinejoin="round">
-			<path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
-			<circle cx="12" cy="12" r="3" />
+			<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+			<polyline points="22 4 12 14.01 9 11.01" />
 		</svg>
 	);
 }

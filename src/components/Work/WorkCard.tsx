@@ -27,7 +27,7 @@ export default function WorkCard({ work }: { work: Work }): React.JSX.Element {
 	const [loading, setLoading] = useState(true);
 
 	return (
-		<Card className="flex h-full w-80 flex-col justify-center">
+		<Card className="col-span-1 flex h-full flex-col justify-center">
 			<CardHeader className="relative overflow-hidden rounded-t-md p-0">
 				<Dialog>
 					<DialogTrigger>

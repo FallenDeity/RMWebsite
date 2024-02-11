@@ -29,7 +29,7 @@ export function WorkData(): React.ReactElement {
 	return (
 		<div className="mt-32 flex min-h-screen w-full flex-col items-center justify-center">
 			{Object.keys(status).map((key) => (
-				<>
+				<div className="flex h-full w-full flex-col items-center justify-center">
 					<motion.div
 						className="flex w-full flex-col items-center justify-center"
 						variants={textVariant()}
@@ -45,7 +45,7 @@ export function WorkData(): React.ReactElement {
 							nulla dignissim eu augue rebum. In eu stet ex vero aliquyam rebum.
 						</p>
 					</motion.div>
-					<div className="my-16 flex flex-wrap items-center justify-center gap-16">
+					<div className="my-16 grid max-w-7xl auto-cols-[20rem] grid-flow-col gap-20 overflow-x-auto overflow-y-hidden px-2 scrollbar-hide sm:auto-cols-[25rem]">
 						{status[key].map((work) => (
 							<motion.div
 								variants={fadeIn("up", "spring", 0.2, 0.65)}
@@ -56,7 +56,7 @@ export function WorkData(): React.ReactElement {
 							</motion.div>
 						))}
 					</div>
-				</>
+				</div>
 			))}
 		</div>
 	);

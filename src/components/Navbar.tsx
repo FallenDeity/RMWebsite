@@ -28,11 +28,11 @@ export default function Navbar(): React.JSX.Element {
 		const handleScroll = (): void => {
 			if (navBarRef.current) {
 				if (window.scrollY > 0) {
-					navBarRef.current.classList.remove("bg-background");
-					navBarRef.current.classList.add("backdrop-blur-sm");
+					// navBarRef.current.classList.remove("bg-background");
+					navBarRef.current.classList.add("backdrop-blur-lg");
 				} else {
-					navBarRef.current.classList.remove("backdrop-blur-sm");
-					navBarRef.current.classList.add("bg-background");
+					navBarRef.current.classList.remove("backdrop-blur-lg");
+					// navBarRef.current.classList.add("bg-background");
 				}
 			}
 		};
@@ -42,7 +42,7 @@ export default function Navbar(): React.JSX.Element {
 	return (
 		<nav
 			ref={navBarRef}
-			className="fixed top-0 z-20 flex w-full items-center bg-background px-4 py-4 backdrop-filter transition-all duration-300 ease-in">
+			className="fixed top-0 z-20 flex w-full items-center bg-background/90 px-4 py-4 shadow-md backdrop-filter transition-all duration-300 ease-in">
 			<div className="mx-auto flex w-full items-center justify-between">
 				<div className="flex cursor-pointer items-center gap-3" onClick={(): void => router.push("/")}>
 					<Image

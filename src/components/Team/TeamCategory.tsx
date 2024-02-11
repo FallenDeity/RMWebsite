@@ -56,7 +56,7 @@ const HeadDetails = ({ details }: { details: TeamMember[] }): React.JSX.Element 
 				whileInView="show"
 				viewport={{ once: true }}>
 				<h2 className="text-[30px] font-black uppercase text-foreground/90 xs:text-[40px] sm:text-[50px] md:text-[60px]">
-					Heads
+					Team Heads
 				</h2>
 				<p className="tracking-pretty hidden text-balance text-center text-[12px] text-foreground/60 sm:flex sm:text-[18px]">
 					Vero tation clita et dolor vero erat dolore et et labore gubergren clita nostrud ad aliquyam vel

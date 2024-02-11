@@ -1,6 +1,7 @@
 import React from "react";
 
 import Experience from "@/components/Competitions/Experience";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export default function Gallery(): React.JSX.Element {
@@ -10,6 +11,7 @@ export default function Gallery(): React.JSX.Element {
 			<div className="flex min-h-screen items-center justify-center">
 				<Experience />
 			</div>
+			<Footer />
 		</>
 	);
 }

@@ -1,11 +1,13 @@
 "use client";
 
 import "@/styles/timeline.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { BsPlusLg } from "react-icons/bs";
+import { Carousel } from "react-responsive-carousel";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 
 import useExperience from "@/lib/hooks/useExperience";
@@ -39,12 +41,12 @@ const ExperienceCard = ({ experience }: { experience: ExperienceModel }): React.
 			<div>
 				<h3 className="vertical-timeline-element-title text-[24px] font-bold">{experience.title}</h3>
 				<span
-					className="vertical-timeline-element-subtitle text-pretty text-[14px] tracking-wide text-accent-foreground/60"
+					className="vertical-timeline-element-subtitle text-pretty text-[13px] tracking-wide text-accent-foreground/60"
 					style={{ margin: 0 }}>
 					{experience.competition}
 				</span>
 			</div>
-			<ul className="ml-2 mt-5 list-disc space-y-2 sm:ml-5">
+			<ul className="my-5 list-disc space-y-2 sm:ml-5">
 				{experience.points.map((point, index) => (
 					<li
 						key={`experience-point-${index}`}
@@ -53,6 +55,29 @@ const ExperienceCard = ({ experience }: { experience: ExperienceModel }): React.
 					</li>
 				))}
 			</ul>
+			{/* eslint-disable-next-line @typescript-eslint/no-unnecessary-condition */}
+			{experience.images && (
+				<div className="flex h-48 w-full justify-center rounded-md">
+					<Carousel
+						showIndicators={false}
+						showStatus={false}
+						infiniteLoop={true}
+						autoPlay={true}
+						interval={5000}
+						emulateTouch={true}>
+						{experience.images.map((image, index) => (
+							<Image
+								key={`experience-image-${index}`}
+								src={image as string}
+								width={50}
+								height={50}
+								className="block h-48 w-full rounded-md object-cover"
+								alt={experience.competition}
+							/>
+						))}
+					</Carousel>
+				</div>
+			)}
 		</VerticalTimelineElement>
 	);
 };
