@@ -77,7 +77,9 @@ export default function WorkCard({ work }: { work: Work }): React.JSX.Element {
 									height={10}
 									className="h-64 w-full rounded-md object-cover shadow-md"
 								/>
-								<span className="w-full text-pretty text-muted-foreground">{work.description}</span>
+								<span className="max-h-56 w-full overflow-y-auto text-pretty text-muted-foreground scrollbar-hide">
+									{work.description}
+								</span>
 							</DialogDescription>
 						</DialogHeader>
 					</DialogContent>
