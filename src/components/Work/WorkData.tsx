@@ -45,7 +45,7 @@ export function WorkData(): React.ReactElement {
 							nulla dignissim eu augue rebum. In eu stet ex vero aliquyam rebum.
 						</p>
 					</motion.div>
-					<div className="my-16 grid max-w-7xl auto-cols-[20rem] grid-flow-col gap-20 overflow-x-auto overflow-y-hidden px-2 scrollbar-hide sm:auto-cols-[25rem]">
+					<div className="my-16 grid w-full max-w-7xl auto-cols-[20rem] grid-flow-col gap-20 overflow-x-auto overflow-y-hidden px-4 scrollbar-hide sm:auto-cols-[25rem]">
 						{status[key].map((work) => (
 							<motion.div
 								variants={fadeIn("up", "spring", 0.2, 0.65)}

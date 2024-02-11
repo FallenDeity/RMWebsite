@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useRef } from "react";
 import { HiMenu } from "react-icons/hi";
@@ -42,7 +43,7 @@ export default function Navbar(): React.JSX.Element {
 	return (
 		<nav
 			ref={navBarRef}
-			className="fixed top-0 z-20 flex w-full items-center bg-background/90 px-4 py-4 shadow-md backdrop-filter transition-all duration-300 ease-in">
+			className="fixed top-0 z-20 flex w-full items-center bg-background/90 px-4 py-4 shadow-md backdrop-filter transition-all duration-300 ease-in dark:shadow-secondary/20">
 			<div className="mx-auto flex w-full items-center justify-between">
 				<div className="flex cursor-pointer items-center gap-3" onClick={(): void => router.push("/")}>
 					<Image
@@ -109,7 +110,8 @@ export default function Navbar(): React.JSX.Element {
 							</SheetHeader>
 							<div className="mt-10 flex flex-col gap-4">
 								{navLinks.map((link) => (
-									<div
+									<Link
+										href={link.route}
 										key={link.label}
 										className={cn(
 											buttonVariants({ variant: "ghost" }),
@@ -117,7 +119,7 @@ export default function Navbar(): React.JSX.Element {
 										)}>
 										<link.icon className={cn("h-5 w-5", link.color)} />
 										<span className="absolute left-12 text-base duration-200">{link.label}</span>
-									</div>
+									</Link>
 								))}
 							</div>
 						</SheetContent>

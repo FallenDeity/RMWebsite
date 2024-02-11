@@ -8,7 +8,9 @@ export default function WorkPage(): React.ReactElement {
 	return (
 		<>
 			<Navbar />
-			<WorkData />
+			<div className="flex min-h-screen items-center justify-center">
+				<WorkData />
+			</div>
 			<Footer />
 		</>
 	);

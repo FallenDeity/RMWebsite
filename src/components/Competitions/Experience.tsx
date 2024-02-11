@@ -46,7 +46,7 @@ const ExperienceCard = ({ experience }: { experience: ExperienceModel }): React.
 					{experience.competition}
 				</span>
 			</div>
-			<ul className="my-5 list-disc space-y-2 sm:ml-5">
+			<ul className="my-5 ml-4 list-disc space-y-2">
 				{experience.points.map((point, index) => (
 					<li
 						key={`experience-point-${index}`}

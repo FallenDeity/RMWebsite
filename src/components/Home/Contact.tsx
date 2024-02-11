@@ -76,19 +76,19 @@ export function Contact(): React.JSX.Element {
 							Feel free to reach out to us for any queries or collaborations.
 						</span>
 						<div className="my-4 flex w-full flex-col items-center justify-center space-y-2 text-sm text-muted-foreground">
-							<div className="flex flex-row">
+							<div className="flex flex-row items-center">
 								<MailIcon className="mr-2 h-4 w-4" />
 								<Link href="mailto:abcd@gmail.com" target="_blank" rel="noopener noreferrer">
 									abcd@gmail.com
 								</Link>
 							</div>
-							<div className="flex flex-row">
+							<div className="flex flex-row items-center">
 								<PhoneIcon className="mr-2 h-4 w-4" />
 								<Link href="tel:+919876543210" target="_blank" rel="noopener noreferrer">
 									+91 9876543210
 								</Link>
 							</div>
-							<div className="flex flex-row">
+							<div className="flex flex-row items-center">
 								<LocateIcon className="mr-2 h-4 w-4" />
 								<p>Team RoboManipal, MIT Manipal, Karnataka, India</p>
 							</div>

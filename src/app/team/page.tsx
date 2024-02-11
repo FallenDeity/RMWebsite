@@ -8,7 +8,9 @@ export default function TeamPage(): React.ReactElement {
 	return (
 		<>
 			<Navbar />
-			<TeamData />
+			<div className="flex min-h-screen items-center justify-center">
+				<TeamData />
+			</div>
 			<Footer />
 		</>
 	);
