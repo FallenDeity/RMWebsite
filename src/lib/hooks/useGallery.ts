@@ -11,7 +11,7 @@ export default function useGallery(): GalleryItem[] {
 	const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
 	useEffect(() => {
 		async function fetchGalleryItems(): Promise<void> {
-			const query = `*[_type == "galleryItem"] | order(_createdAt desc)`;
+			const query = `*[_type == "galleryItem"] | order(createdAt desc)`;
 			const results = await client.fetch<GalleryItem[]>(query);
 			results.forEach((result) => {
 				result.image = urlForImage(result.image as Image);

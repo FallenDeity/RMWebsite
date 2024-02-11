@@ -37,5 +37,11 @@ export default {
 			type: "array",
 			of: [{ type: "string" }],
 		},
+		{
+			title: "Images",
+			name: "images",
+			type: "array",
+			of: [{ type: "image" }],
+		},
 	],
 };

@@ -65,7 +65,7 @@ export default function Navbar(): React.JSX.Element {
 											<NavigationMenuLink asChild>
 												<a
 													className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
-													href="/#faq">
+													href="/">
 													<div className="mb-2 mt-4 text-lg font-medium">RoboManipal</div>
 													<p className="text-pretty text-xs text-muted-foreground">
 														A student project dedicated to the robotics and automation.

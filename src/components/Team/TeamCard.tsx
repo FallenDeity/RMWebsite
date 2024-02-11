@@ -9,6 +9,7 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { TeamMember } from "@/lib/models";
+import { fadeIn } from "@/lib/motion";
 
 import { Separator } from "../ui/separator";
 
@@ -21,7 +22,7 @@ const captializeName = (original: string): string => {
 export default function TeamCard({ member }: { member: TeamMember }): React.ReactElement {
 	return (
 		<motion.div
-			variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
+			variants={fadeIn("up", "spring", 0.2, 0.65)}
 			initial="hidden"
 			whileInView="show"
 			viewport={{ once: true }}>

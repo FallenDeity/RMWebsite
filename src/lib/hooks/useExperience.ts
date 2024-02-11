@@ -15,6 +15,10 @@ export default function useExperience(): Experience[] {
 			const results = await client.fetch<Experience[]>(query);
 			results.forEach((result) => {
 				result.icon = urlForImage(result.icon as Image);
+				// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+				if (result.images) {
+					result.images = result.images.map((image) => urlForImage(image as Image));
+				}
 			});
 			setExperience(results);
 		}

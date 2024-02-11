@@ -39,8 +39,21 @@ export interface Experience {
 	readonly date: string;
 	readonly competition: string;
 	icon: string | Image;
+	images: (string | Image)[];
 	readonly iconBg: string;
 	readonly points: string[];
+	readonly _createdAt: Date;
+	readonly _updatedAt: Date;
+}
+
+export interface Work {
+	readonly _id: string;
+	readonly title: string;
+	readonly description: string;
+	image: string | Image;
+	readonly status: "In Progress" | "Completed" | "Upcoming";
+	readonly link: string;
+	readonly date: Date;
 	readonly _createdAt: Date;
 	readonly _updatedAt: Date;
 }
