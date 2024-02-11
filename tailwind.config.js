@@ -76,8 +76,12 @@ module.exports = {
 		},
 	},
 	plugins: [
+		require("postcss-import"),
 		require("tailwindcss-animate"),
 		require("prettier-plugin-tailwindcss"),
+		require('tailwindcss/nesting')(require('postcss-nesting')),
+		require("autoprefixer"),
+		require("tailwindcss"),
 		require("tailwind-scrollbar"),
 		require("tailwind-scrollbar-hide"),
 		require("@tailwindcss/typography"),
