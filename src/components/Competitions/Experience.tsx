@@ -57,7 +57,7 @@ const ExperienceCard = ({ experience }: { experience: ExperienceModel }): React.
 			</ul>
 			{/* eslint-disable-next-line @typescript-eslint/no-unnecessary-condition */}
 			{experience.images && (
-				<div className="flex h-48 w-full justify-center rounded-md">
+				<div className="xl:h- w56-full hidden h-64 justify-center rounded-md sm:flex">
 					<Carousel
 						showIndicators={false}
 						showStatus={false}
@@ -71,7 +71,7 @@ const ExperienceCard = ({ experience }: { experience: ExperienceModel }): React.
 								src={image as string}
 								width={50}
 								height={50}
-								className="block h-48 w-full rounded-md object-cover"
+								className="block h-64 w-full rounded-md object-cover xl:h-56"
 								alt={experience.competition}
 							/>
 						))}

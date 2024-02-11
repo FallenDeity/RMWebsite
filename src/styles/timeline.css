@@ -164,7 +164,7 @@
 	margin-left: 60px;
 	background: #fff;
 	border-radius: 0.25em;
-	padding: 1em;
+	padding: 1em 1em 0.5em 1em;
 	box-shadow: 0 3px 0 hsl(var(--primary));
 }
 .vertical-timeline--one-column-right .vertical-timeline-element-content {
@@ -203,7 +203,7 @@
 }
 .vertical-timeline-element-content .vertical-timeline-element-date {
 	float: right;
-	padding: 0.4em 0;
+	padding: 1em 0em 0em 0em;
 	opacity: 0.5;
 }
 .vertical-timeline-element-content-arrow {
