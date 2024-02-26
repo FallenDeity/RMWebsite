@@ -41,7 +41,7 @@ const ExperienceCard = ({ experience }: { experience: ExperienceModel }): React.
 			<div>
 				<h3 className="vertical-timeline-element-title text-[24px] font-bold">{experience.title}</h3>
 				<span
-					className="vertical-timeline-element-subtitle text-pretty text-[13px] tracking-wide text-accent-foreground/60"
+					className="vertical-timeline-element-subtitle text-[13px] tracking-wide text-accent-foreground/60"
 					style={{ margin: 0 }}>
 					{experience.competition}
 				</span>
@@ -57,7 +57,7 @@ const ExperienceCard = ({ experience }: { experience: ExperienceModel }): React.
 			</ul>
 			{/* eslint-disable-next-line @typescript-eslint/no-unnecessary-condition */}
 			{experience.images && (
-				<div className="xl:h- w56-full hidden h-64 justify-center rounded-md sm:flex">
+				<div className="hidden h-64 w-full justify-center rounded-md sm:flex xl:h-56">
 					<Carousel
 						showIndicators={false}
 						showStatus={false}

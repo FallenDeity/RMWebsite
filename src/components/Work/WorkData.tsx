@@ -40,9 +40,10 @@ export function WorkData(): React.ReactElement {
 							{key}
 						</h2>
 						<p className="tracking-pretty hidden text-balance text-center text-foreground/60 sm:flex sm:text-[18px]">
-							Vero tation clita et dolor vero erat dolore et et labore gubergren clita nostrud ad aliquyam
-							vel invidunt invidunt. Ea nulla quis at feugait lorem est iriure enim stet amet et ipsum eos
-							nulla dignissim eu augue rebum. In eu stet ex vero aliquyam rebum.
+							We are committed to pushing the boundaries of technology through ongoing research and
+							development initiatives. Our team of experts is dedicated to exploring innovative solutions
+							to address real-world challenges. Currently, we are actively engaged in the following
+							research projects:
 						</p>
 					</motion.div>
 					<div className="my-16 grid w-full max-w-7xl auto-cols-[20rem] grid-flow-col gap-20 overflow-x-auto overflow-y-hidden px-4 scrollbar-hide sm:auto-cols-[25rem]">

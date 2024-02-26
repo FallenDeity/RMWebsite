@@ -27,13 +27,14 @@ export function About(): React.JSX.Element {
 							initial="hidden"
 							whileInView="show"
 							viewport={{ once: true }}
-							className="max-w-[700px] text-gray-600 dark:text-gray-400 md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-							Cum nihil eos autem sit et diam diam est duis duis eos sit autem consequat. Elitr sit sed
-							aliquam lobortis dolor kasd eos ipsum. Voluptua clita sit lorem dolor hendrerit in diam et
-							sanctus et et sit et. Sed voluptua et magna aliquam eirmod nonumy dolor eos clita facilisis
-							amet sit iriure ut. Amet eum esse diam ea gubergren eleifend dolor sea cum. Eirmod nonumy
-							eirmod luptatum lorem est. Et elitr sed at aliquip duis invidunt dolor eos eros hendrerit
-							diam dolor sed nostrud.
+							className="max-w-[700px] text-justify tracking-tight text-gray-600 dark:text-gray-400 md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
+							Team RoboManipal is the official Robotics team of MAHE, Manipal established in 2009. We are
+							a multidisciplinary team of 40+ undergraduate robotics enthusiasts who endeavour to achieve
+							innovation through robotic technologies and spread knowledge about its diverse applications.
+							The legacy of 13 years to have won laurels at many levels is a testament to our enthusiasm.
+							We participate in prestigious competitions like ABU ROBOCON - Asia’s biggest Robotic
+							Competition. Robotreks and Robowars, the most exciting events of TechTatva which attract
+							teams from all over India, are organised by RoboManipal.
 						</motion.p>
 					</motion.div>
 				</div>
@@ -52,9 +53,11 @@ export function About(): React.JSX.Element {
 							initial="hidden"
 							whileInView="show"
 							viewport={{ once: true }}
-							className="max-w-[700px] text-gray-600 dark:text-gray-400 md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
-							We strive to ignite curiosity and innovation in the minds of future roboticists, fostering a
-							passion for cutting-edge technology.
+							className="max-w-[700px] text-justify tracking-tight text-gray-600 dark:text-gray-400 md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
+							We strive to formulate effective solutions to complex problems with the help of Robotics and
+							its applications and compete in the toughest Robotics competitions in the world. Our
+							innovation starts with a DREAM to elucidate problems as we BUILD solutions to ACHIEVE the
+							limitless.
 						</motion.p>
 					</motion.div>
 
@@ -97,7 +100,7 @@ export function About(): React.JSX.Element {
 						alt="Mission Image"
 						className="h-48 w-full object-cover md:h-72"
 						height={400}
-						src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+						src="/about_1.jpg"
 						style={{
 							aspectRatio: "600/400",
 							objectFit: "cover",
@@ -115,7 +118,7 @@ export function About(): React.JSX.Element {
 						alt="Values Image"
 						className="h-48 w-full object-cover md:h-72"
 						height={400}
-						src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+						src="/about_2.jpg"
 						style={{
 							aspectRatio: "600/400",
 							objectFit: "cover",

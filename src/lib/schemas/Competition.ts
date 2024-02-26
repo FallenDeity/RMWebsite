@@ -43,5 +43,10 @@ export default {
 			type: "array",
 			of: [{ type: "image" }],
 		},
+		{
+			title: "Priority",
+			name: "priority",
+			type: "number",
+		},
 	],
 };

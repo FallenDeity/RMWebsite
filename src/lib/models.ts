@@ -40,6 +40,7 @@ export interface Experience {
 	readonly competition: string;
 	icon: string | Image;
 	images: (string | Image)[];
+	readonly priority: number;
 	readonly iconBg: string;
 	readonly points: string[];
 	readonly _createdAt: Date;

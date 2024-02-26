@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useMemo } from "react";
 
+import { subsystemText } from "@/lib/constants";
 import { TeamMember } from "@/lib/models";
 import { textVariant } from "@/lib/motion";
 
@@ -26,10 +27,15 @@ const SubSystemSection = ({ subsystem, details }: { subsystem: string; details: 
 						<h2 className="text-[30px] font-black uppercase text-foreground/90 xs:text-[40px] sm:text-[50px] md:text-[60px]">
 							{subsystem}
 						</h2>
-						<p className="tracking-pretty hidden text-balance text-center text-foreground/60 sm:flex sm:text-[18px]">
-							Vero tation clita et dolor vero erat dolore et et labore gubergren clita nostrud ad aliquyam
-							vel invidunt invidunt. Ea nulla quis at feugait lorem est iriure enim stet amet et ipsum eos
-							nulla dignissim eu augue rebum. In eu stet ex vero aliquyam rebum.
+						<span className="tracking-pretty hidden text-center font-bold text-foreground/80 sm:flex sm:text-[19px]">
+							"{subsystemText[subsystem.toLowerCase()].split("\n")[0]}"
+						</span>
+						<p className="tracking-pretty mt-2 hidden text-balance text-center text-foreground/60 sm:flex sm:text-[18px]">
+							{
+								subsystemText[subsystem.toLowerCase()].split("\n")[
+									subsystemText[subsystem.toLowerCase()].split("\n").length - 1
+								]
+							}
 						</p>
 					</motion.div>
 					<div className="my-16 flex flex-wrap items-center justify-center gap-16">
@@ -58,10 +64,15 @@ const HeadDetails = ({ details }: { details: TeamMember[] }): React.JSX.Element 
 				<h2 className="text-[30px] font-black uppercase text-foreground/90 xs:text-[40px] sm:text-[50px] md:text-[60px]">
 					Team Heads
 				</h2>
-				<p className="tracking-pretty hidden text-balance text-center text-[12px] text-foreground/60 sm:flex sm:text-[18px]">
-					Vero tation clita et dolor vero erat dolore et et labore gubergren clita nostrud ad aliquyam vel
-					invidunt invidunt. Ea nulla quis at feugait lorem est iriure enim stet amet et ipsum eos nulla
-					dignissim eu augue rebum. In eu stet ex vero aliquyam rebum.
+				<span className="tracking-pretty hidden text-center font-bold text-foreground/80 sm:flex sm:text-[19px]">
+					"At the forefront of Robomanipal's robotics team stand our dedicated heads, driving our collective
+					efforts forward with unwavering commitment and expertise."
+				</span>
+				<p className="tracking-pretty mt-2 hidden text-balance text-center text-[12px] text-foreground/60 sm:flex sm:text-[18px]">
+					At the forefront of Robomanipal's robotics team stand our dedicated heads, driving our collective
+					efforts forward with unwavering commitment and expertise. With their expertise and commitment, they
+					inspire us to pursue innovation and excellence in every project. Under their guidance, we navigate
+					the intricate challenges of robotics with confidence, charting a course toward success in our field.
 				</p>
 			</motion.div>
 			<div className="my-16 flex flex-wrap items-center justify-center gap-16">

@@ -11,7 +11,7 @@ export default function useExperience(): Experience[] {
 	const [experience, setExperience] = useState<Experience[]>([]);
 	useEffect(() => {
 		async function fetchExperience(): Promise<void> {
-			const query = `*[_type == "competition"] | order(_createdAt desc)`;
+			const query = `*[_type == "competition"] | order(priority desc)`;
 			const results = await client.fetch<Experience[]>(query);
 			results.forEach((result) => {
 				result.icon = urlForImage(result.icon as Image);

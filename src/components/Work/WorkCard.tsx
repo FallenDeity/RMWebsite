@@ -31,7 +31,7 @@ export default function WorkCard({ work }: { work: Work }): React.JSX.Element {
 			<CardHeader className="relative overflow-hidden rounded-t-md p-0">
 				<Dialog>
 					<DialogTrigger>
-						<div className="h-64 w-full overflow-hidden">
+						<div className="flex h-64 w-full items-center justify-center overflow-hidden">
 							<Image
 								src={work.image as string}
 								alt={work.title}

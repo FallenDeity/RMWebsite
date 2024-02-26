@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { LocateIcon, MailIcon, PhoneIcon } from "lucide-react";
+import { MailIcon, PhoneIcon } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -88,14 +88,10 @@ export function Contact(): React.JSX.Element {
 									+91 9876543210
 								</Link>
 							</div>
-							<div className="flex flex-row items-center">
-								<LocateIcon className="mr-2 h-4 w-4" />
-								<p>Team RoboManipal, MIT Manipal, Karnataka, India</p>
-							</div>
 						</div>
 						<iframe
 							title="Team RoboManipal"
-							className="h-full w-full rounded-md"
+							className="mt-3 h-full w-full rounded-md"
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.038475674665!2d74.78948297585087!3d13.347882787003211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbca58e304c36e7%3A0xd7655313d087ee45!2sTeam%20RoboManipal!5e0!3m2!1sen!2sin!4v1705827761207!5m2!1sen!2sin"
 							style={{ border: 0 }}
 							allowFullScreen
