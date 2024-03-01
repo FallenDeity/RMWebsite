@@ -4,8 +4,11 @@ import { Inter } from "next/font/google";
 import React from "react";
 
 import AppProvider from "@/components/AppProvider";
+import { meta } from "@/lib/constants";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const metadata = meta;
 
 export default function RootLayout({ children }: { children: React.ReactNode }): React.JSX.Element {
 	return (
