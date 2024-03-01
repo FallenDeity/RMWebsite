@@ -54,7 +54,7 @@ export const SparklesCore = (props: ParticlesProps): React.JSX.Element => {
 					options={{
 						background: {
 							color: {
-								value: background || "#0d47a1",
+								value: background ?? "#0d47a1",
 							},
 						},
 						fullScreen: {
