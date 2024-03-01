@@ -1,7 +1,7 @@
 import { FacebookIcon, InstagramIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import { BsTwitterX } from "react-icons/bs";
+import { FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { MdBiotech } from "react-icons/md";
 
 export default function Footer(): React.JSX.Element {
@@ -79,8 +79,9 @@ export default function Footer(): React.JSX.Element {
 							<span className="text-lg font-bold">RoboManipal</span>
 						</div>
 						<p className="mt-2 text-center text-gray-600">
-							Making the world a better place through constructing elegant hierarchies for maximum code
-							reuse and extensibility.
+							Driving innovation in robotics. We design, build, and program advanced systems, fostering
+							understanding of mechanics and software, promoting teamwork, and pushing technological
+							boundaries.
 						</p>
 					</div>
 				</div>
@@ -92,14 +93,33 @@ export default function Footer(): React.JSX.Element {
 						<span className="text-lg font-bold">RoboManipal</span>
 					</div>
 					<div className="flex items-center space-x-4">
-						<Link href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" passHref>
+						<Link
+							href="https://www.facebook.com/RoboManipal/"
+							target="_blank"
+							rel="noopener noreferrer"
+							passHref>
 							<FacebookIcon className="h-6 w-6 text-blue-400 transition-all duration-300 ease-in-out hover:text-blue-500" />
 						</Link>
-						<Link href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" passHref>
-							<BsTwitterX className="h-6 w-6 text-slate-400 transition-all duration-300 ease-in-out hover:text-slate-500" />
+						<Link
+							href="https://www.linkedin.com/company/robomanipal/?originalSubdomain=in"
+							target="_blank"
+							rel="noopener noreferrer"
+							passHref>
+							<FaLinkedinIn className="h-6 w-6 text-sky-400 transition-all duration-300 ease-in-out hover:text-sky-500" />
 						</Link>
-						<Link href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" passHref>
+						<Link
+							href="https://www.instagram.com/team.robomanipal/"
+							target="_blank"
+							rel="noopener noreferrer"
+							passHref>
 							<InstagramIcon className="h-6 w-6 text-pink-400 transition-all duration-300 ease-in-out hover:text-pink-500" />
+						</Link>
+						<Link
+							href="https://youtube.com/@RoboManipalTeam?feature=shared"
+							target="_blank"
+							rel="noopener noreferrer"
+							passHref>
+							<FaYoutube className="h-6 w-6 text-red-400 transition-all duration-300 ease-in-out hover:text-red-500" />
 						</Link>
 					</div>
 				</div>

@@ -7,6 +7,7 @@ import Contact from "@/components/Home/Contact";
 import FAQ from "@/components/Home/Faq";
 import Sponsors from "@/components/Home/Sponsors";
 import Navbar from "@/components/Navbar";
+import SparklesPreview from "@/components/Spline";
 
 export default function Home(): React.JSX.Element {
 	return (
@@ -14,7 +15,7 @@ export default function Home(): React.JSX.Element {
 			<Navbar />
 			<BgEffect />
 			<div className="flex min-h-screen items-center justify-center">
-				<h1 className="text-5xl font-black">Hello World</h1>
+				<SparklesPreview />
 			</div>
 			<About />
 			<Sponsors />

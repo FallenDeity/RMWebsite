@@ -4,31 +4,29 @@ import { useTheme } from "next-themes";
 import React, { useEffect } from "react";
 
 import { resize, setup } from "@/lib/hills";
-import { resize as lresize, setup as lsetup } from "@/lib/swirl";
 
 export default function BgEffect(): React.JSX.Element {
+	const [setupEffect, setSetupEffect] = React.useState(false);
 	const { resolvedTheme } = useTheme();
 
 	useEffect(() => {
 		if (!resolvedTheme) return;
-		if (resolvedTheme === "dark") lsetup(resolvedTheme);
-		else setup(resolvedTheme);
+		setup(resolvedTheme);
 	}, [resolvedTheme]);
 
 	useEffect(() => {
-		if (!resolvedTheme) return;
+		if (setupEffect) return;
 		if (typeof window === "undefined") return;
+		setSetupEffect(true);
 		window.addEventListener("resize", () => {
-			if (resolvedTheme === "dark") lresize();
-			else resize();
+			resize();
 		});
 		return () => {
 			window.removeEventListener("resize", () => {
-				if (resolvedTheme === "dark") lresize();
-				else resize();
+				resize();
 			});
 		};
-	}, [resolvedTheme]);
+	}, [setupEffect]);
 
 	return (
 		<>

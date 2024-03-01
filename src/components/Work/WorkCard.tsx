@@ -110,9 +110,11 @@ export default function WorkCard({ work }: { work: Work }): React.JSX.Element {
 						)}
 						<span>{work.status}</span>
 					</Badge>
-					<Link href={""} target="_blank" rel="noreferrer">
-						<RiExternalLinkLine className="h-4 w-4 hover:text-blue-500" />
-					</Link>
+					{work.link && (
+						<Link href={work.link} target="_blank" rel="noreferrer">
+							<RiExternalLinkLine className="h-4 w-4 hover:text-blue-500" />
+						</Link>
+					)}
 				</div>
 			</CardFooter>
 		</Card>

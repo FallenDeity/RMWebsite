@@ -26,7 +26,7 @@ const ExperienceCard = ({ experience }: { experience: ExperienceModel }): React.
 			}}
 			contentArrowStyle={{ borderRight: "7px solid  hsl(var(--accent) / 60%)" }}
 			date={experience.date}
-			iconStyle={{ background: experience.iconBg }}
+			iconStyle={{ background: experience.iconBg, borderRadius: "50%" }}
 			icon={
 				<div className="flex h-full w-full items-center justify-center p-1.5">
 					<Image
@@ -34,7 +34,7 @@ const ExperienceCard = ({ experience }: { experience: ExperienceModel }): React.
 						height={64}
 						src={experience.icon as string}
 						alt={experience.competition}
-						className="h-full w-full object-contain"
+						className="h-full w-full rounded-full object-contain"
 					/>
 				</div>
 			}>
@@ -84,7 +84,7 @@ const ExperienceCard = ({ experience }: { experience: ExperienceModel }): React.
 
 const Experience = (): React.JSX.Element => {
 	const experiences = useExperience();
-	const [cards, setCards] = React.useState<number>(2);
+	const [cards, setCards] = React.useState<number>(4);
 	React.useEffect(() => {
 		const hidden = document.querySelectorAll(".is-hidden");
 		const ob = new IntersectionObserver((entries) => {
@@ -130,7 +130,7 @@ const Experience = (): React.JSX.Element => {
 									color: "hsl(var(--secondary-forground))",
 								}}
 								icon={<BsPlusLg className="transition-all duration-300 ease-in-out hover:scale-150" />}
-								iconOnClick={(): void => setCards(Math.min(cards + 2, experiences.length))}
+								iconOnClick={(): void => setCards(Math.min(cards + 4, experiences.length))}
 							/>
 						)}
 					</VerticalTimeline>

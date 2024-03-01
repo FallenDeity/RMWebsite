@@ -27,7 +27,7 @@ const SubSystemSection = ({ subsystem, details }: { subsystem: string; details: 
 						<h2 className="text-[30px] font-black uppercase text-foreground/90 xs:text-[40px] sm:text-[50px] md:text-[60px]">
 							{subsystem}
 						</h2>
-						<span className="tracking-pretty hidden text-center font-bold text-foreground/80 sm:flex sm:text-[19px]">
+						<span className="tracking-pretty hidden text-center font-bold text-foreground/80 sm:flex sm:text-[18px]">
 							"{subsystemText[subsystem.toLowerCase()].split("\n")[0]}"
 						</span>
 						<p className="tracking-pretty mt-2 hidden text-balance text-center text-foreground/60 sm:flex sm:text-[18px]">
@@ -64,9 +64,9 @@ const HeadDetails = ({ details }: { details: TeamMember[] }): React.JSX.Element 
 				<h2 className="text-[30px] font-black uppercase text-foreground/90 xs:text-[40px] sm:text-[50px] md:text-[60px]">
 					Team Heads
 				</h2>
-				<span className="tracking-pretty hidden text-center font-bold text-foreground/80 sm:flex sm:text-[19px]">
-					"At the forefront of Robomanipal's robotics team stand our dedicated heads, driving our collective
-					efforts forward with unwavering commitment and expertise."
+				<span className="tracking-pretty hidden text-center font-bold text-foreground/80 sm:flex sm:text-[18px]">
+					"At the helm of Robomanipal's robotics team, our dedicated heads lead with unwavering commitment and
+					expertise."
 				</span>
 				<p className="tracking-pretty mt-2 hidden text-balance text-center text-[12px] text-foreground/60 sm:flex sm:text-[18px]">
 					At the forefront of Robomanipal's robotics team stand our dedicated heads, driving our collective

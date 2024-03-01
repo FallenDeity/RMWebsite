@@ -78,14 +78,17 @@ export function Contact(): React.JSX.Element {
 						<div className="my-4 flex w-full flex-col items-center justify-center space-y-2 text-sm text-muted-foreground">
 							<div className="flex flex-row items-center">
 								<MailIcon className="mr-2 h-4 w-4" />
-								<Link href="mailto:abcd@gmail.com" target="_blank" rel="noopener noreferrer">
-									abcd@gmail.com
+								<Link
+									href="mailto:team.robomanipal@gmail.com"
+									target="_blank"
+									rel="noopener noreferrer">
+									team.robomanipal@gmail.com
 								</Link>
 							</div>
 							<div className="flex flex-row items-center">
 								<PhoneIcon className="mr-2 h-4 w-4" />
-								<Link href="tel:+919876543210" target="_blank" rel="noopener noreferrer">
-									+91 9876543210
+								<Link href="tel:+919630093604" target="_blank" rel="noopener noreferrer">
+									+91 963009360
 								</Link>
 							</div>
 						</div>
