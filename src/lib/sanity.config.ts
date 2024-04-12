@@ -17,6 +17,7 @@ export default defineConfig({
 	// Add and edit the content schema in the './sanity/schema' folder
 	schema,
 	plugins: [
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 		structureTool(),
 		// Vision is a tool that lets you query your content with GROQ in the studio
 		// https://www.sanity.io/docs/the-vision-plugin
