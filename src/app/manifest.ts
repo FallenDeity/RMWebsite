@@ -2,10 +2,10 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
 	return {
-		name: "Data Canvas",
-		short_name: "Data Canvas",
+		name: "RoboManipal",
+		short_name: "RM",
 		description:
-			"Discovering the Endless Potential of Your Data. Explore a world of online tools, API access, and easy database development and management. Your canvas, your data, limitless possibilities.",
+			"Driving innovation in robotics. We design, build, and program advanced systems, fostering understanding of mechanics and software, promoting teamwork, and pushing technological boundaries.",
 		start_url: "/",
 		display: "standalone",
 		background_color: "#ffffff",
