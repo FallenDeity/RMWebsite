@@ -13,9 +13,9 @@ import GalleryImage from "./GalleryImage";
 export function GalleryView(): React.JSX.Element {
 	const gallery = useGallery();
 	return (
-		<>
+		<div className="mx-auto mt-32 flex min-h-screen w-full max-w-7xl flex-col items-center justify-center px-4 py-10 sm:px-16">
 			<motion.div
-				className="my-10 flex w-full flex-col items-center justify-center"
+				className="flex w-full flex-col items-center justify-center"
 				variants={textVariant()}
 				initial="hidden"
 				whileInView="show"
@@ -43,8 +43,8 @@ export function GalleryView(): React.JSX.Element {
 					</ResponsiveMasonry>
 				)}
 			</motion.div>
-		</>
+		</div>
 	);
 }
 
-export default SectionWrapper(GalleryView, "Gallery");
+export default SectionWrapper(GalleryView, "gallery");
