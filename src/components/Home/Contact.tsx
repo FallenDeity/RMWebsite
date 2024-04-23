@@ -1,8 +1,18 @@
 "use client";
+import "react-toastify/dist/ReactToastify.css";
+
+import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { MailIcon, PhoneIcon } from "lucide-react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { BeatLoader } from "react-spinners";
+import { Slide, toast, ToastContainer } from "react-toastify";
+import { z } from "zod";
 
+import { sendMessage } from "@/app/actions/sendMessage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -12,9 +22,49 @@ import { slideIn, textVariant } from "@/lib/motion";
 
 import SectionWrapper from "../wrappers/SectionWrapper";
 
+export const ContactSchema = z.object({
+	firstName: z.string().min(3).max(50),
+	lastName: z.string().min(3).max(50),
+	email: z.string().email(),
+	message: z.string().min(10).max(500),
+});
+
+export type ContactFormType = z.infer<typeof ContactSchema>;
+
 export function Contact(): React.JSX.Element {
+	const [disabled, setDisabled] = useState(false);
+	const { resolvedTheme } = useTheme();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<ContactFormType>({
+		mode: "onChange",
+		resolver: zodResolver(ContactSchema),
+	});
+
+	const OnSubmit = async (data: ContactFormType): Promise<void> => {
+		setDisabled(true);
+		const response = await sendMessage(data);
+		setDisabled(false);
+		if (response.errors) {
+			return Object.entries(response.errors).forEach(([key, value]) => {
+				toast.error(`${key}: ${value[0]}`);
+			});
+		}
+		toast.success("Message sent successfully!");
+	};
+
 	return (
 		<>
+			<ToastContainer
+				transition={Slide}
+				position="bottom-right"
+				autoClose={5000}
+				closeOnClick
+				pauseOnFocusLoss
+				theme={resolvedTheme === "dark" ? "dark" : "light"}
+			/>
 			<motion.div
 				className="flex w-full flex-col items-center justify-center"
 				variants={textVariant()}
@@ -42,31 +92,62 @@ export function Contact(): React.JSX.Element {
 										Fill out the form below and we'll get back to you as soon as possible.
 									</p>
 								</div>
-								<div className="space-y-4">
-									<div className="grid grid-cols-2 gap-4">
-										<div className="space-y-2">
+								{/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
+								<form onSubmit={handleSubmit(OnSubmit)}>
+									<div className="my-2 grid grid-cols-2 gap-4">
+										<div>
 											<Label htmlFor="first-name">First name</Label>
-											<Input id="first-name" placeholder="Enter your first name" />
+											<Input
+												className="mt-1"
+												{...register("firstName")}
+												placeholder="Enter your first name"
+											/>
+											<span className="mt-2 text-xs text-red-500">
+												{errors.firstName?.message}
+											</span>
 										</div>
-										<div className="space-y-2">
+										<div>
 											<Label htmlFor="last-name">Last name</Label>
-											<Input id="last-name" placeholder="Enter your last name" />
+											<Input
+												className="mt-1"
+												{...register("lastName")}
+												placeholder="Enter your last name"
+											/>
+											<span className="mt-2 text-xs text-red-500">
+												{errors.lastName?.message}
+											</span>
 										</div>
 									</div>
-									<div className="space-y-2">
+									<div className="my-2">
 										<Label htmlFor="email">Email</Label>
-										<Input id="email" placeholder="Enter your email" type="email" />
+										<Input
+											className="mt-1"
+											{...register("email")}
+											type="email"
+											placeholder="Enter your email"
+										/>
+										<span className="mt-2 text-xs text-red-500">{errors.email?.message}</span>
 									</div>
-									<div className="space-y-2">
+									<div className="my-2">
 										<Label htmlFor="message">Message</Label>
 										<Textarea
-											className="min-h-[100px]"
-											id="message"
+											{...register("message")}
+											className="mt-1 min-h-[100px]"
 											placeholder="Enter your message"
 										/>
+										<span className="mt-2 text-xs text-red-500">{errors.message?.message}</span>
 									</div>
-									<Button className="w-full">Send message</Button>
-								</div>
+									<Button
+										disabled={disabled}
+										type="submit"
+										className="mt-4 w-full bg-primary disabled:cursor-not-allowed">
+										{disabled ? (
+											<BeatLoader className="text-primary-foreground" size={5} />
+										) : (
+											"Send Message"
+										)}
+									</Button>
+								</form>
 							</div>
 						</CardContent>
 					</Card>

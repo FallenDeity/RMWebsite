@@ -30,7 +30,7 @@ export function FAQ(): React.JSX.Element {
 				variants={slideIn("right", "spring", 0.1, 1)}>
 				<Accordion type="single" collapsible>
 					<AccordionItem value="1" variant={"question"}>
-						<AccordionTrigger variant={"question"}>Which Branch students can apply?</AccordionTrigger>
+						<AccordionTrigger variant={"question"}>Which branch students can apply?</AccordionTrigger>
 						<AccordionContent>
 							MIT students from any discipline are encouraged to apply for the subsystem of their choice.
 							It's essential that they have a genuine interest in the selected subsystem and are prepared
